@@ -20,6 +20,7 @@ await esbuild.build({
   platform: 'node',
   outfile: join(OUT, 'functions/ssr.func/index.js'),
   external: ['node:*', 'cloudflare:*'],
+  ignoreAnnotations: true,
   logLevel: 'warning',
 })
 console.log('✓ Bundled SSR Node.js function')
