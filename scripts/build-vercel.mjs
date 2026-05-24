@@ -17,16 +17,16 @@ await esbuild.build({
   entryPoints: [join(root, 'scripts/vercel-entry.mjs')],
   bundle: true,
   format: 'esm',
-  platform: 'browser',
+  platform: 'node',
   outfile: join(OUT, 'functions/ssr.func/index.js'),
   external: ['node:*', 'cloudflare:*'],
   logLevel: 'warning',
 })
-console.log('✓ Bundled SSR edge function')
+console.log('✓ Bundled SSR Node.js function')
 
 writeFileSync(
   join(OUT, 'functions/ssr.func/.vc-config.json'),
-  JSON.stringify({ runtime: 'edge', entrypoint: 'index.js' })
+  JSON.stringify({ runtime: 'nodejs22.x', handler: 'index.js', launcherType: 'Nodejs' })
 )
 
 writeFileSync(
