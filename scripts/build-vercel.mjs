@@ -30,6 +30,11 @@ writeFileSync(
 )
 
 writeFileSync(
+  join(OUT, 'functions/ssr.func/package.json'),
+  JSON.stringify({ type: 'module' })
+)
+
+writeFileSync(
   join(OUT, 'config.json'),
   JSON.stringify({
     version: 3,
