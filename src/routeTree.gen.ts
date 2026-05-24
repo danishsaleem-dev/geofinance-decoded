@@ -9,8 +9,92 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ReadingListRouteImport } from './routes/reading-list'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as OffshoreGuideRouteImport } from './routes/offshore-guide'
+import { Route as NewsletterRouteImport } from './routes/newsletter'
+import { Route as MoneyAndMacroRouteImport } from './routes/money-and-macro'
+import { Route as InvestingRouteImport } from './routes/investing'
+import { Route as GeopoliticsRouteImport } from './routes/geopolitics'
+import { Route as FreedomRouteImport } from './routes/freedom'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AdvertiseRouteImport } from './routes/advertise'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReadingListRoute = ReadingListRouteImport.update({
+  id: '/reading-list',
+  path: '/reading-list',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OffshoreGuideRoute = OffshoreGuideRouteImport.update({
+  id: '/offshore-guide',
+  path: '/offshore-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsletterRoute = NewsletterRouteImport.update({
+  id: '/newsletter',
+  path: '/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoneyAndMacroRoute = MoneyAndMacroRouteImport.update({
+  id: '/money-and-macro',
+  path: '/money-and-macro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestingRoute = InvestingRouteImport.update({
+  id: '/investing',
+  path: '/investing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeopoliticsRoute = GeopoliticsRouteImport.update({
+  id: '/geopolitics',
+  path: '/geopolitics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FreedomRoute = FreedomRouteImport.update({
+  id: '/freedom',
+  path: '/freedom',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdvertiseRoute = AdvertiseRouteImport.update({
+  id: '/advertise',
+  path: '/advertise',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +103,228 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advertise': typeof AdvertiseRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/freedom': typeof FreedomRoute
+  '/geopolitics': typeof GeopoliticsRoute
+  '/investing': typeof InvestingRoute
+  '/money-and-macro': typeof MoneyAndMacroRoute
+  '/newsletter': typeof NewsletterRoute
+  '/offshore-guide': typeof OffshoreGuideRoute
+  '/privacy': typeof PrivacyRoute
+  '/reading-list': typeof ReadingListRoute
+  '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advertise': typeof AdvertiseRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/freedom': typeof FreedomRoute
+  '/geopolitics': typeof GeopoliticsRoute
+  '/investing': typeof InvestingRoute
+  '/money-and-macro': typeof MoneyAndMacroRoute
+  '/newsletter': typeof NewsletterRoute
+  '/offshore-guide': typeof OffshoreGuideRoute
+  '/privacy': typeof PrivacyRoute
+  '/reading-list': typeof ReadingListRoute
+  '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/advertise': typeof AdvertiseRoute
+  '/contact': typeof ContactRoute
+  '/disclaimer': typeof DisclaimerRoute
+  '/freedom': typeof FreedomRoute
+  '/geopolitics': typeof GeopoliticsRoute
+  '/investing': typeof InvestingRoute
+  '/money-and-macro': typeof MoneyAndMacroRoute
+  '/newsletter': typeof NewsletterRoute
+  '/offshore-guide': typeof OffshoreGuideRoute
+  '/privacy': typeof PrivacyRoute
+  '/reading-list': typeof ReadingListRoute
+  '/reviews': typeof ReviewsRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/advertise'
+    | '/contact'
+    | '/disclaimer'
+    | '/freedom'
+    | '/geopolitics'
+    | '/investing'
+    | '/money-and-macro'
+    | '/newsletter'
+    | '/offshore-guide'
+    | '/privacy'
+    | '/reading-list'
+    | '/reviews'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/advertise'
+    | '/contact'
+    | '/disclaimer'
+    | '/freedom'
+    | '/geopolitics'
+    | '/investing'
+    | '/money-and-macro'
+    | '/newsletter'
+    | '/offshore-guide'
+    | '/privacy'
+    | '/reading-list'
+    | '/reviews'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/advertise'
+    | '/contact'
+    | '/disclaimer'
+    | '/freedom'
+    | '/geopolitics'
+    | '/investing'
+    | '/money-and-macro'
+    | '/newsletter'
+    | '/offshore-guide'
+    | '/privacy'
+    | '/reading-list'
+    | '/reviews'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AdvertiseRoute: typeof AdvertiseRoute
+  ContactRoute: typeof ContactRoute
+  DisclaimerRoute: typeof DisclaimerRoute
+  FreedomRoute: typeof FreedomRoute
+  GeopoliticsRoute: typeof GeopoliticsRoute
+  InvestingRoute: typeof InvestingRoute
+  MoneyAndMacroRoute: typeof MoneyAndMacroRoute
+  NewsletterRoute: typeof NewsletterRoute
+  OffshoreGuideRoute: typeof OffshoreGuideRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ReadingListRoute: typeof ReadingListRoute
+  ReviewsRoute: typeof ReviewsRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reading-list': {
+      id: '/reading-list'
+      path: '/reading-list'
+      fullPath: '/reading-list'
+      preLoaderRoute: typeof ReadingListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offshore-guide': {
+      id: '/offshore-guide'
+      path: '/offshore-guide'
+      fullPath: '/offshore-guide'
+      preLoaderRoute: typeof OffshoreGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletter': {
+      id: '/newsletter'
+      path: '/newsletter'
+      fullPath: '/newsletter'
+      preLoaderRoute: typeof NewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/money-and-macro': {
+      id: '/money-and-macro'
+      path: '/money-and-macro'
+      fullPath: '/money-and-macro'
+      preLoaderRoute: typeof MoneyAndMacroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investing': {
+      id: '/investing'
+      path: '/investing'
+      fullPath: '/investing'
+      preLoaderRoute: typeof InvestingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/geopolitics': {
+      id: '/geopolitics'
+      path: '/geopolitics'
+      fullPath: '/geopolitics'
+      preLoaderRoute: typeof GeopoliticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freedom': {
+      id: '/freedom'
+      path: '/freedom'
+      fullPath: '/freedom'
+      preLoaderRoute: typeof FreedomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/advertise': {
+      id: '/advertise'
+      path: '/advertise'
+      fullPath: '/advertise'
+      preLoaderRoute: typeof AdvertiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +337,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AdvertiseRoute: AdvertiseRoute,
+  ContactRoute: ContactRoute,
+  DisclaimerRoute: DisclaimerRoute,
+  FreedomRoute: FreedomRoute,
+  GeopoliticsRoute: GeopoliticsRoute,
+  InvestingRoute: InvestingRoute,
+  MoneyAndMacroRoute: MoneyAndMacroRoute,
+  NewsletterRoute: NewsletterRoute,
+  OffshoreGuideRoute: OffshoreGuideRoute,
+  PrivacyRoute: PrivacyRoute,
+  ReadingListRoute: ReadingListRoute,
+  ReviewsRoute: ReviewsRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
