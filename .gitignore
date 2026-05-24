@@ -16,6 +16,10 @@ dist-ssr
 .nitro
 *.local
 
+# Environment variables (never commit — add these to Vercel dashboard)
+.env
+.env.*
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
